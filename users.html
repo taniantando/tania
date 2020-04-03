@@ -3,20 +3,214 @@
     
     
     <head>
-        <meta chaset="UTF-8">
-        <title>Management Company</title>
+        <meta chaset="viewport" content="width=device-width,
+         initial-scale=1">
         <link rel= "stylesheet" href="css/sheet.css"\>
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Users profile</title>
+        
+        <style>
+            .body{
+                font-family:sans-serif;
+                margin:5px;
+                 padding:5px;
+                box-sizing:border-box;
+            }
+            .card {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              max-width: 300px;
+              height:450px;
+              margin: auto;
+              text-align: center;
+              font-family: sans-serif;
+            }
+            h1.outset{border-style:outset;
+            height:200px;
+            font-family:sans-serif;
+            text-align:justify;
+            width:100%;
+            }
+            
+            .dropbtn{
+                background-color:aquamarine;
+                color:white;
+                padding:15px;
+                font-size: 15px;
+                border:none;
+                cursor:pointer;
+            }
+            .dropdown-submenu{
+                position:relative;
+            }
+            .dropdown-submenu .dropdown-menu{
+                top:0;
+                left:50%;
+                margin-top:-1px;
+            }
+            button{
+                background-color:aquamarine;
+                color:white;
+                padding:14px 20px;
+                margin:8px 0px;
+                border:none;
+                cursor:pointer;
+                width:50%;
+                opacity:0.9;
+            }
+            buton:hover{
+                opacity:1;
+            }
+            /*Float cancel and delete buttons and add an equal width*/
+            .cancelbtn, .deletebtn{
+               float:right;
+               width:50%;
+            }
+            .cancelbtn{
+                background-color:aqua;
+                color:black;
+            }
+            /*add color to the delete button*/
+            .deletebtn{
+                background-color:blue;
+
+            }
+            .container{
+                padding:16px;
+                text-align:center;
+            }
+            .model{
+                display:none;
+                position:fixed;
+                z-index:1;
+                left:0;
+                top:0;
+                width:50%;
+                height:50%;
+                overflow:auto;
+                background-color: lightgrey;
+                padding-top:50px;
+
+            }
+            .modal-content{
+                background-color:lightgrey;
+                margin:5% auto 15%auto /*the 5% is from the top and 15%
+                                        is from the bottom and center*/
+            }
+            hr{
+                border:1px solid lightgray;
+                margin-bottom:25px;
+            }
+            
+            /*the modal close button*/
+            .close{
+                position:absolute;
+                right:35px;
+                top:15px;
+                font-size:40px;
+                font-weight:bold;
+                color:aqua;
+            }
+            .close:hover .close:focus{
+                color:blue;
+                cursor:pointer;
+            }
+            /*clear floats*/
+            .clearfix::after{
+                content:"";
+                clear :both;
+                display:table;
+            }
+            @media screen and (max-width:300px){
+                .cancelbtn .deletebtn{
+                    width:50%;
+                }
+            }
+
+            .navbar{
+                overflow:hidden;
+                position:fixed;
+                top:0;
+                width:75%;
+            }
+            .navbar a{
+                float:left;
+                display:block;
+                color:blue;
+                text-align:center;
+                padding:14px 16px;
+                text-decoration:none;
+                font-size:17px;
+            }
+            .navbar a:hover{
+                background:darkgrey;
+                color:black;
+            }
+            .main{
+                padding:16px;
+                margin-top:30px;
+                height:500px;
+            }
+
+
+            </style>
     </head>
     
     <body>
-        <div class="container">
-            <img class="img-fluid" src="images.jpeg" alt="Chania" width="175" height="175"
-            style="float:left">
+        <div class="card">
+            <img class="img-fluid" src="images.jpeg" alt="Chania" width="175px " height="175px"
+            style="width:75%">
             <h2>Tania Dube</h2>
             <a href="taniantandodube@gmail.com">taniantandodube@gmail.com</a><br>
+           <br><a href="number">081 573 1354</a><br>
             <br><a href="number">021 069 2933</a>
 
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" 
+                type="button" data-toggle="dropdown">More details
+                <class="caret"></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Home Address<a href="address">Philippi East 7750</a></li>
+                  <li><a href="#">Kin name<a href="name">Fikile Dube</a></a></li>
+                  <li><a href="#">Relationship<a href="relationship">Mother</a></li>
+                  <li><a href="#">Contact<a href="number">071 256 7785</a></a></li>
+                  <li><a href="#">Email<a href="email">fikile101.fm@gmail.com</a></a></li>
+                    
+
+                 
+                  
+                  <button onclick="document.getElementById('id01').style.display='block'">Delete profile</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Delete profile</h1>
+      <p>Are you sure you want to delete your profile?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+                  
+                </ul>
+              </div>
+            </div>
             
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">News feed</a></li>
+                    <li><a href="#">Users</a></li>
+                    <li><a href="#">Admin</a></li>
+                  </ul>
+              </div>
     </body>
-</html> "# tania" 
-"# html-exercise" 
+</html> 
+"# project" 
